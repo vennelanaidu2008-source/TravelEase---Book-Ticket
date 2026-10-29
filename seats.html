@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Seats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>💺 Select Your Seats</h1></header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Tickets</a>
+        <a href="services.html">Services</a>
+        <a href="seats.html">Select Seats</a>
+        <a href="fares.html">Fare Details</a>
+    </nav>
+
+    <main class="container">
+        <section class="panel">
+            <h2>Choose Your Seat</h2>
+            <p>Green seats are available. Grey seats are booked.</p>
+
+            <div class="seats">
+                <button class="seat" onclick="selectSeat(this)">A1</button>
+                <button class="seat" onclick="selectSeat(this)">A2</button>
+                <button class="seat booked" disabled>A3</button>
+                <button class="seat" onclick="selectSeat(this)">A4</button>
+                <button class="seat" onclick="selectSeat(this)">B1</button>
+                <button class="seat" onclick="selectSeat(this)">B2</button>
+                <button class="seat" onclick="selectSeat(this)">B3</button>
+                <button class="seat booked" disabled>B4</button>
+                <button class="seat" onclick="selectSeat(this)">C1</button>
+                <button class="seat" onclick="selectSeat(this)">C2</button>
+                <button class="seat" onclick="selectSeat(this)">C3</button>
+                <button class="seat" onclick="selectSeat(this)">C4</button>
+            </div>
+
+            <p>Selected seats: <strong id="selected">None</strong></p>
+            <a class="button" href="fares.html">Continue</a>
+        </section>
+    </main>
+
+    <footer><p>© 2026 TravelEase</p></footer>
+
+    <script>
+        let selectedSeats = [];
+
+        function selectSeat(button) {
+            const seat = button.textContent;
+
+            if (button.classList.contains("selected")) {
+                button.classList.remove("selected");
+                selectedSeats = selectedSeats.filter(s => s !== seat);
+            } else {
+                button.classList.add("selected");
+                selectedSeats.push(seat);
+            }
+
+            document.getElementById("selected").textContent =
+                selectedSeats.join(", ") || "None";
+        }
+    </script>
+</body>
+</html>

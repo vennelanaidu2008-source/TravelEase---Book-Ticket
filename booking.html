@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - TravelEase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>TravelEase - Book Tickets</h1></header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="booking.html">Book Tickets</a>
+        <a href="services.html">Services</a>
+        <a href="seats.html">Select Seats</a>
+        <a href="fares.html">Fare Details</a>
+    </nav>
+
+    <main class="container">
+        <section class="panel">
+            <h2>🎫 Passenger Details</h2>
+
+            <form action="services.html">
+                <label for="type">Travel Type</label>
+                <select id="type" name="type">
+                    <option>Bus</option>
+                    <option>Train</option>
+                </select>
+
+                <label for="source">From</label>
+                <input id="source" name="source"
+                       placeholder="Enter starting city" required>
+
+                <label for="destination">To</label>
+                <input id="destination" name="destination"
+                       placeholder="Enter destination" required>
+
+                <label for="date">Travel Date</label>
+                <input id="date" name="date" type="date" required>
+
+                <label for="name">Passenger Name</label>
+                <input id="name" name="name"
+                       placeholder="Full name" required>
+
+                <label for="age">Passenger Age</label>
+                <input id="age" name="age" type="number"
+                       min="1" max="120" required>
+
+                <label for="passengers">Number of Passengers</label>
+                <select id="passengers" name="passengers">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+
+                <label for="classType">Travel Class</label>
+                <select id="classType" name="classType">
+                    <option>Standard / Sleeper</option>
+                    <option>AC</option>
+                </select>
+
+                <button type="submit">Continue</button>
+            </form>
+        </section>
+    </main>
+
+    <footer><p>© 2026 TravelEase</p></footer>
+</body>
+</html>
